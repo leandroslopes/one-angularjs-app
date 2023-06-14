@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="MyApp">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, input {
+            font-size: 22pt;
+        }
+    </style>
     <title>One AngularJS App</title>
 </head>
 <body>
-    <h1>One AngularJS App</h1>
+
+    <div ng-controller="MyAppController">
+        My Name Is: <br>
+        {{ name }}
+
+        <div>
+            <button ng-click="feed()">Feed Leandro</button> <br>
+
+            <img ng-src="images/man_{{ stateOfBeing }}.png" alt="">
+        </div>
+    </div>
+    
+
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

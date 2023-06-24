@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingListCheckOff">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <style>
+    </style>
+    <title>Shopping List Check Off</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-5">
+            <h1>Shopping List Check Off</h1>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div ng-controller="ToBuyController as toBuy">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h3> To Buy List </h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <table class="table table-hover" ng-if="toBuy.items.length > 0">
+                      <tr ng-repeat="item in toBuy.items">
+                        <td>Buy {{ item.quantity }} {{ item.name }}</td>
+                        <td><button name="bought" ng-click="toBuy.bought($index)">Bought</button></td>
+                      </tr>
+                    </table>
+                    <div class="alert alert-info" role="alert" ng-if="toBuy.items.length === 0">
+                      <strong>Everything is bought!</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5"></div>
+          <div class="col-md-3">
+            <div ng-controller="AlreadyBoughtController as bought">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h3>Already Bought List</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <table class="table table-hover" ng-if="bought.items.length > 0">
+                      <tr ng-repeat="item in bought.items">
+                        <td>Bought {{ item.quantity }} {{ item.name }}</td>
+                      </tr>
+                    </table>
+                    <div class="alert alert-info" role="alert" ng-if="bought.items.length === 0">
+                      <strong>Nothing bought yet!</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div ng-controller="ToBuyController as toBuy">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <h3> To Buy List </h3>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <table class="table table-hover">
+                <tr ng-repeat="item in toBuy.items">
+                  <td>Buy {{ item.quantity }} {{ item.name }}</td>
+                  <td><button name="bought">Bought</button></td>
+                </tr>
+              </table>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="IBGENamesApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <style>
+      .margin-top-16 {
+        margin-top: 16px;
+      }
+    </style>
+    <title>IBGE Names</title>
+  </head>
+  <body>
+    <div ng-controller="RankingFilterController as filters">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <my-header></my-header>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" ng-click="filters.showFilter('decade');">
+                Decade
+              </label>
+            </div>
+          </div>
+          <div class="col-md-1">
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" ng-click="filters.showFilter('location');">
+                Location
+              </label>
+            </div>
+          </div>
+          <div class="col-md-1">
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" ng-click="filters.showFilter('genre');">
+                Genre
+              </label>
+            </div>
+          </div>
+          <div class="col-md-9"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <select 
+              name="decate" 
+              id="decade"
+              ng-model="filters.decade"
+              ng-if="filters.isDecade && filters.isLocation === false && filters.isGenre === false">
+              <option ng-repeat="decade in filters.decades" value="{{ decade }}">{{ decade }}</option>
+            </select>
+            <select 
+              name="location" 
+              id="location"
+              ng-model="filters.location"
+              ng-if="filters.isLocation && filters.isDecade === false && filters.isGenre === false">
+              <option ng-repeat="location in filters.locations track by $index" value="{{ location.code }}">{{ location.name }}</option>
+            </select>
+            <select 
+              name="genre" 
+              id="genre"
+              ng-model="filters.genre"
+              ng-if="filters.isGenre && filters.isLocation === false && filters.isDecade === false">
+              <option value="M">Masculino</option>
+              <option value="F">Feminino</option>
+            </select>
+            <button 
+              name="ranking"
+              ng-if="filters.isDecade || filters.isLocation || filters.isGenre" 
+              ng-click="filters.getListRanking();">
+              Ver Ranking
+            </button>
+          </div>
+        </div>
+        <div class="row margin-top-16" ng-if="filters.rankingList.length > 0">
+          <div class="col-md-12">
+            <table-list items="filters.rankingList"></table-list>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

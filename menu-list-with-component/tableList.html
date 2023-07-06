@@ -1,0 +1,16 @@
+<table class="table table-hover">
+  <tr>
+    <th class="text-center">Item Menu</th>
+    <th class="text-center text-nowrap">Short Name</th>
+    <th class="text-center">Description</th>
+    <th class="text-center">Actions</th>
+  </tr>
+  <tr ng-repeat="item in $ctrl.items track by $index">
+    <td>{{ item.name }}</td>
+    <td class="text-center">{{ item.short_name }}</td>
+    <td>{{ item.description }}</td>
+    <td class="text-center">
+      <button name="removeItem" class="btn btn-primary" ng-click="$ctrl.remove($index);">Don't want this one!</button>
+    </td>
+  </tr>
+</table>

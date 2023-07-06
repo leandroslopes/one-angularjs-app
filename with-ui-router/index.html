@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="RoutingApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <style>
+      .margin-top-16 {
+        margin-top: 16px;
+      }
+    </style>
+    <title>UI ROUTER</title>
+  </head>
+  <body>
+    <h1>UI ROUTER</h1>
+    <div class="tabs">
+      <a ui-sref="tab1">TAB 1</a>
+      <a ui-sref="tab2">TAB 2</a>
+    </div>
+    <ui-view>
+
+    </ui-view>
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-ui-router.min.js"></script>
+    <script src="src/app.js"></script>
+  </body>
+</html>

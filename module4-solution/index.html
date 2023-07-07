@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MenuApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">    
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Menu App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Menu App</h1>
+        </div>
+      </div>
+      <ui-view></ui-view>
+    </div>
+
+    <!-- Libraries -->
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="src/menuapp/data.module.js"></script>
+    <script src="src/menuapp/menuapp.module.js"></script>
+
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <!-- 'MenuApp' modules artifacts -->
+    <script src="src/menuapp/categories.component.js"></script>
+    <script src="src/menuapp/main-categories.controller.js"></script>
+    <script src="src/menuapp/menudata.service.js"></script>
+    <script src="src/menuapp/menu-items.component.js"></script>
+    <script src="src/menuapp/menu-items.controller.js"></script>
+  </body>
+</html>

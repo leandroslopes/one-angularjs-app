@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-12">
+      <a ui-sref="home">Home</a> &lt; 
+      <a ui-sref="categories">Categories</a> &lt; 
+      <span>{{ menuItems.categoryName }}</span>
+  </div>
+</div>
+<div class="row margin-top-16">
+  <div class="col-md-12">
+    <ul>
+      <li
+        ng-repeat="item in menuItems.items"
+      >
+        {{ item.name }}
+      </li>
+    </ul>
+  </div>
+</div>

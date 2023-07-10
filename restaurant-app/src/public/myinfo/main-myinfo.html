@@ -1,0 +1,7 @@
+<div class="container">
+    <no-my-info ng-if="mainMyInfoCtrl.user.name === ''"></no-my-info>
+    <my-info 
+        ng-if="mainMyInfoCtrl.user.name !== ''"
+        user="mainMyInfoCtrl.user">
+    </my-info>
+</div>

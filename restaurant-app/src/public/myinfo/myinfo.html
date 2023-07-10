@@ -1,0 +1,45 @@
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">
+    My Info
+  </h2>
+  <br />
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">Name: {{ $ctrl.user.name }}</div>
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">Last Name: {{ $ctrl.user.lastName }}</div>
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">Email: {{ $ctrl.user.email }}</div>
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">Phone: {{ $ctrl.user.phone }}</div>
+    <div class="col-md-4"></div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="menu-item-photo">
+        <div>{{ $ctrl.user.menuItem.short_name }}</div>
+        <img
+          class="img-responsive"
+          width="250"
+          height="150"
+          ng-src="{{ $ctrl.basePath }}/images/{{ $ctrl.user.menuItem.short_name }}.jpg"
+          alt="{{ myInfoCtrl.user.menuItem.name }}"
+        />
+      </div>
+    </div>
+    <div class="menu-item-description col-sm-7">
+      <h3 class="menu-item-title">{{ $ctrl.user.menuItem.name }}</h3>
+      <p class="menu-item-details">{{ $ctrl.user.menuItem.description }}</p>
+    </div>
+  </div>
+</div>
